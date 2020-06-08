@@ -13,6 +13,8 @@ def evaluatePostfix(postfix):
 		else:
 			right = valuesList.pop()
 			left = valuesList.pop()
+			if token == '^':
+				token = '**'
 			newValue = eval(str(left) + token + str(right))
 			valuesList.append(int(newValue))
 	return valuesList.pop()
